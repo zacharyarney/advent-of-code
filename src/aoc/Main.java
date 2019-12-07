@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException {
         System.out.println(System.getProperty("user.dir"));
         DayOne dayOne = new DayOne();
-        File f = new File("src/aoc/inputs/day1.txt");
+        File f = new File("aoc/inputs/day1.txt");
         System.out.println("FILE EXISTS? " + f.exists());
         Scanner s = new Scanner(f);
         int sum = 0;
