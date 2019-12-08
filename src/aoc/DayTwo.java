@@ -19,16 +19,17 @@ public class DayTwo {
     }
 
     public void intCodeProgram(int[] intArr) {
-        ArrayList<Integer> output = new ArrayList<>();
+        System.out.println("\n=== DAY 2.1 ===");
+        System.out.println("~ Array Solution ~");
+        System.out.println("OPCODE 0: " + intCodeProgram(intArr.clone(), 12, 2));
 
-        intArr[1] = 12;
-        intArr[2] = 2;
+        intCodeProgram(intArr.clone(), 12, 2);
+    }
 
-        for (int i : intArr) {
-            output.add(i);
-        }
+    public int intCodeProgram(int[] intArr, int noun, int verb) {
+        intArr[1] = noun;
+        intArr[2] = verb;
 
-        // Array solution for good measure
         for (int i = 0; i < intArr.length; i += 4) {
             int cur = intArr[i];
 
