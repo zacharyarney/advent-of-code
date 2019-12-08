@@ -7,36 +7,13 @@ import java.util.Scanner;
 public class DayOne {
     private int sum = 0;
     private int realSum = 0;
-    private File input;
-    private Scanner scanner;
+    private Scanner scanner = new Scanner(new File("aoc/inputs/day1.txt"));
 
-    public DayOne(File input) throws FileNotFoundException {
-        this.input = input;
-        scanner = new Scanner(input);
-    }
-
-    public int getSum() {
-        return sum;
-    }
-
-    public void setSum(int sum) {
-        this.sum = sum;
-    }
-
-    public int getRealSum() {
-        return realSum;
-    }
-
-    public void setRealSum(int realSum) {
-        this.realSum = realSum;
+    public DayOne() throws FileNotFoundException {
     }
 
     public Scanner getScanner() {
         return scanner;
-    }
-
-    public void setScanner(Scanner scanner) {
-        this.scanner = scanner;
     }
 
     public int fuelCounterUpper(int mass) {
@@ -63,9 +40,9 @@ public class DayOne {
             realSum += fuelRequired(mass);
         }
 
-        System.out.println("===DAY 1.1===");
+        System.out.println("=== DAY 1.1 ===");
         System.out.println("TOTAL FUEL REQUIREMENT: " + sum);
-        System.out.println("\n===DAY 1.2===");
+        System.out.println("\n=== DAY 1.2 ===");
         System.out.println("ACTUAL TOTAL FUEL REQUIREMENT: " + realSum);
     }
 }
