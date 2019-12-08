@@ -30,18 +30,18 @@ public class DayTwo {
 
         // Array solution for good measure
         for (int i = 0; i < intArr.length; i += 4) {
-           int cur = intArr[i];
+            int cur = intArr[i];
 
-           if (cur == 1) {
-               intArr[intArr[i + 3]] = intArr[intArr[i + 1]] + intArr[intArr[i + 2]];
-           } else if (cur == 2) {
-               intArr[intArr[i + 3]] = intArr[intArr[i + 1]] * intArr[intArr[i + 2]];
-           } else if (cur == 99) {
-               break;
-           } else {
-               System.out.println("ERROR: " + intArr[i] + " is not a valid opcode");
-               break;
-           }
+            if (cur == 1) {
+                intArr[intArr[i + 3]] = intArr[intArr[i + 1]] + intArr[intArr[i + 2]];
+            } else if (cur == 2) {
+                intArr[intArr[i + 3]] = intArr[intArr[i + 1]] * intArr[intArr[i + 2]];
+            } else if (cur == 99) {
+                break;
+            } else {
+                System.out.println("ERROR: " + intArr[i] + " is not a valid opcode");
+                break;
+            }
         }
 
         // ArrayList solution
