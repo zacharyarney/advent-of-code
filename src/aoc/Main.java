@@ -8,7 +8,10 @@ public class Main {
         DayOne dayOne = new DayOne();
         DayTwo dayTwo = new DayTwo();
 
+        // *** DAY ONE ***
         dayOne.countUpFuel(dayOne.getScanner());
+
+        // *** DAY TWO ***
         dayTwo.intCodeProgram(dayTwo.getIntCode());
         dayTwo.determineCorrectInputs(dayTwo.getIntCode(), 19690720);
     }
