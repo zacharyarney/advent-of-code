@@ -10,5 +10,6 @@ public class Main {
 
         dayOne.countUpFuel(dayOne.getScanner());
         dayTwo.intCodeProgram(dayTwo.getIntCode());
+        dayTwo.determineCorrectInputs(dayTwo.getIntCode(), 19690720);
     }
 }

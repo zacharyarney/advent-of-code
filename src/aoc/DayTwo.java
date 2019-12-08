@@ -45,7 +45,33 @@ public class DayTwo {
             }
         }
 
-        // ArrayList solution
+        return intArr[0];
+    }
+
+    public void determineCorrectInputs(int[] arr, int output) {
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length; j++) {
+                if (intCodeProgram(arr.clone(), i, j) == output) {
+                    System.out.println("\n=== DAY 2.2 ===");
+                    System.out.println("PROGRAM CODE: " + (100 * i + j));
+                    return;
+                }
+            }
+        }
+    }
+
+    // 2.1 ArrayList solution
+    public int intCodeProgramAL(int[] intArr) {
+        ArrayList<Integer> output = new ArrayList<>();
+        int[] arrCopy = intArr.clone();
+
+        arrCopy[1] = 12;
+        arrCopy[2] = 2;
+
+        for (int i : arrCopy) {
+            output.add(i);
+        }
+
         for (int i = 0; i < output.size(); i += 4) {
             int cur = output.get(i);
 
@@ -61,10 +87,9 @@ public class DayTwo {
             }
         }
 
-        System.out.println("\n=== DAY 2.1 ===");
-        System.out.println("~ Array Solution ~");
-        System.out.println("OPCODE 0: " + intArr[0]);
         System.out.println("~ ArrayList Solution ~");
         System.out.println("OPCODE 0: " + output.get(0));
+
+        return output.get(0);
     }
 }
