@@ -27,8 +27,17 @@ public class DayThree {
 * ALGORITHM
 * Iterate through input1
 * Determine direction via substring(0,1)
-* if direction == U -> while i < distance (x, y++)
-* if direction == D -> while i < distance (x, y--)
-* if direction == R -> while i < distance (x++, y)
-* if direction == L -> while i < distance (x--, y)
+* add coordinates to HashMap as string -> { "x,y": true }
+*   if direction == U -> while i < distance (x, y++)
+*   if direction == D -> while i < distance (x, y--)
+*   if direction == R -> while i < distance (x++, y)
+*   if direction == L -> while i < distance (x--, y)
+* iterate through input2
+* convert items to coordinate strings
+* check path1 HashMap for coordinate string
+* if exists convert to integers and store coordinate as nearest intersection
+*   initialize nearest intersection var to {0, 0}
+*   if nearest == {0, 0} -> just replace it
+*   else check that coordinate absolute < nearest coordinate absolute
+* return nearest intersection
 * */
