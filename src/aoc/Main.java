@@ -16,5 +16,9 @@ public class Main {
         // *** DAY TWO ***
         dayTwo.intCodeProgram(dayTwo.getIntCode());
         dayTwo.determineCorrectInputs(dayTwo.getIntCode(), 19690720);
+
+        // *** DAY THREE ***
+        dayThree.createPath(dayThree.getInput1(), dayThree.getPath1());
+        dayThree.checkForIntersections(dayThree.getInput2(), dayThree.getPath1());
     }
 }
