@@ -7,9 +7,10 @@ import java.util.Scanner;
 public class DayOne {
     private int sum = 0;
     private int realSum = 0;
-    private Scanner scanner = new Scanner(new File("src/aoc/inputs/day1.txt"));
+    private Scanner scanner;
 
-    public DayOne() throws FileNotFoundException {
+    public DayOne(File input) throws FileNotFoundException {
+        scanner = new Scanner(input);
     }
 
     public Scanner getScanner() {

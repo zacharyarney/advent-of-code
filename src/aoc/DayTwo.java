@@ -7,11 +7,12 @@ import java.util.Scanner;
 import java.util.stream.Stream;
 
 public class DayTwo {
-    private Scanner scanner = new Scanner(new File("src/aoc/inputs/day2.txt"));
-    private String input = scanner.nextLine();
-    private int[] intCode = Stream.of(input.split(",")).mapToInt(Integer::parseInt).toArray();
+    private int[] intCode;
 
-    public DayTwo() throws FileNotFoundException {
+    public DayTwo(File input) throws FileNotFoundException {
+        Scanner scanner = new Scanner(input);
+        String intCodeStr = scanner.nextLine();
+        intCode = Stream.of(intCodeStr.split(",")).mapToInt(Integer::parseInt).toArray();
     }
 
     public int[] getIntCode() {
