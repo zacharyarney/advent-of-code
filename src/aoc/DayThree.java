@@ -2,9 +2,15 @@ package aoc;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
+
+enum Direction {
+    U,
+    D,
+    R,
+    L
+}
 
 public class DayThree {
     private Scanner scanner = new Scanner(new File("src/aoc/inputs/day3.txt"));
