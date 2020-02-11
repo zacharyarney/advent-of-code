@@ -19,6 +19,3 @@ def find_valid_passwords(start, end):
             count += 1
 
     return count
-
-
-# print(find_valid_passwords(372304, 847060))
