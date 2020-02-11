@@ -1,5 +1,9 @@
 .idea/
+.vscode
 .DS_Store
 
 build/
 *.jar
+
+#python
+.python-version
