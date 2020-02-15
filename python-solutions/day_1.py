@@ -3,7 +3,8 @@ from math import floor
 
 def fuel_counter_upper(input):
     modules = open(input).read().splitlines()
-    total_fuel = sum(floor(int(mod) / 3) -
-                     2 for mod in modules if int(mod) > 0)
+    # this one-liner is probably not great practice
+    # but I know how to write a loop and this is for learning.
+    total_fuel = sum(floor(int(m) / 3) - 2 for m in modules if int(m) > 0)
 
     return total_fuel
