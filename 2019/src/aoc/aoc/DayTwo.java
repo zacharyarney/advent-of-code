@@ -13,6 +13,7 @@ public class DayTwo {
         Scanner scanner = new Scanner(input);
         String intCodeStr = scanner.nextLine();
         intCode = Stream.of(intCodeStr.split(",")).mapToInt(Integer::parseInt).toArray();
+        scanner.close();
     }
 
     public int[] getIntCode() {

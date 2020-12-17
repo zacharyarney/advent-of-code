@@ -26,6 +26,7 @@ public class DayThree {
         path1 = new HashMap<>();
         nearestX = 0;
         nearestY = 0;
+        scanner.close();
     }
 
     public String[] getInput1() {
