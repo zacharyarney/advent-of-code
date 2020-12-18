@@ -1,17 +1,41 @@
 package util
 
 import (
+	"bufio"
 	"fmt"
+	"io"
+	"reflect"
 	"testing"
 )
 
-func TestOpenFile(t *testing.T) {
-	got := OpenFile("../inputs/test.txt")
-	want := "/Users/zacharyarney/projects/advent-of-code/2020/inputs/test.txt"
+type MockDay struct {
+	Text string
+}
 
-	if got != want {
-		t.Errorf("got %q want %q\n", got, want)
+func (m *MockDay) Challenge(file io.Reader) {
+	scan := bufio.NewScanner(file)
+	scan.Scan()
+	m.Text = scan.Text()
+	fmt.Println(m.Text)
+	fmt.Println(scan.Text())
+}
+
+const testPath = "../inputs/test.txt"
+
+func TestOpenAndUseFile(t *testing.T) {
+	mockDay := &MockDay{}
+	OpenAndUseFile(testPath, mockDay)
+	want := "This is a test."
+
+	if !reflect.DeepEqual(want, mockDay.Text) {
+		t.Errorf("wanted text: %q got: %q", want, mockDay.Text)
 	}
+	// got := OpenAndUseFile("../inputs/test.txt")
+	// want := "/Users/zacharyarney/projects/advent-of-code/2020/inputs/test.txt"
 
-	fmt.Println(got)
+	// if got != want {
+	// 	t.Errorf("got %q want %q\n", got, want)
+	// }
+
+	// fmt.Println(got)
 }
