@@ -12,7 +12,7 @@ type Day interface {
 	Challenge(io.Reader)
 }
 
-//OpenAndUseFile takes a path to a file as a string and returns
+// OpenAndUseFile takes a path to a file as a string and returns and a Day struct and calls Day.Challenge()
 func OpenAndUseFile(filePath string, day Day) {
 	absPath, pathErr := filepath.Abs(filePath)
 	if pathErr != nil {
