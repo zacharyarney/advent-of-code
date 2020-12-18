@@ -1,16 +1,28 @@
 package util
 
 import (
+	"io"
 	"log"
+	"os"
 	"path/filepath"
 )
 
-//OpenFile takes a path to a file as a string and returns
-func OpenFile(filePath string) string {
-	absPath, err := filepath.Abs(filePath)
-	if err != nil {
-		log.Fatal("couldn't open file")
+// Day is the type for each day's work. It has a Challenge method for the function used to solve the problem.
+type Day interface {
+	Challenge(io.Reader)
+}
+
+//OpenAndUseFile takes a path to a file as a string and returns
+func OpenAndUseFile(filePath string, day Day) {
+	absPath, pathErr := filepath.Abs(filePath)
+	if pathErr != nil {
+		log.Fatal("couldn't get path")
 	}
 
-	return absPath
+	file, fileErr := os.Open(absPath)
+	if fileErr != nil {
+		log.Fatal("couldn't get path")
+	}
+
+	day.Challenge(file)
 }
