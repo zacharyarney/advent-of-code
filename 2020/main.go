@@ -9,6 +9,9 @@ import (
 
 func main() {
 	fmt.Println("ADVENT OF CODE 2020")
-	dayone := day01.DayOne{}
-	fmt.Printf("DAY 01: %d\n", util.OpenAndUseFile("./inputs/day01.txt", dayone))
+	fmt.Println("Day One")
+	dayOnePtOne := day01.DayOnePtOne{}
+	dayOnePtTwo := day01.DayOnePtTwo{}
+	fmt.Printf("Pt 1: %d\n", util.OpenAndUseFile("./inputs/day01.txt", dayOnePtOne))
+	fmt.Printf("Pt 2: %d\n", util.OpenAndUseFile("./inputs/day01.txt", dayOnePtTwo))
 }

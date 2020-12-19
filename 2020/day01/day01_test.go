@@ -13,17 +13,33 @@ const testEntries = `1721
 1456`
 
 func TestChallenge(t *testing.T) {
-	buffer := strings.NewReader(testEntries)
-	// buffer.WriteString(testEntries)
-	dayOne := DayOne{}
-	got, err := dayOne.Challenge(buffer)
-	want := 514579
+	t.Run("Two numbers", func(t *testing.T) {
+		buffer := strings.NewReader(testEntries)
+		dayOne := DayOnePtOne{}
+		got, err := dayOne.Challenge(buffer)
+		want := 514579
 
-	if err != nil {
-		t.Errorf("couldn't read file")
-	}
+		if err != nil {
+			t.Errorf("couldn't read file")
+		}
 
-	if got != want {
-		t.Errorf("want %d got %d", want, got)
-	}
+		if got != want {
+			t.Errorf("want %d got %d", want, got)
+		}
+	})
+
+	t.Run("Three numbers", func(t *testing.T) {
+		buffer := strings.NewReader(testEntries)
+		dayOne := DayOnePtTwo{}
+		got, err := dayOne.Challenge(buffer)
+		want := 241861950
+
+		if err != nil {
+			t.Errorf("couldn't read file")
+		}
+
+		if got != want {
+			t.Errorf("want %d got %d", want, got)
+		}
+	})
 }
