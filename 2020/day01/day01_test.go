@@ -1,7 +1,6 @@
 package day01
 
 import (
-	"fmt"
 	"strings"
 	"testing"
 )
@@ -13,14 +12,34 @@ const testEntries = `1721
 675
 1456`
 
-func TestExpenseReport(t *testing.T) {
-	buffer := strings.NewReader(testEntries)
-	// buffer.WriteString(testEntries)
-	entries, err := ExpenseReport(buffer)
+func TestChallenge(t *testing.T) {
+	t.Run("Two numbers", func(t *testing.T) {
+		buffer := strings.NewReader(testEntries)
+		dayOne := DayOnePtOne{}
+		got, err := dayOne.Challenge(buffer)
+		want := 514579
 
-	if err != nil {
-		t.Errorf("couldn't read file")
-	}
+		if err != nil {
+			t.Errorf("couldn't read file")
+		}
 
-	fmt.Println(entries)
+		if got != want {
+			t.Errorf("want %d got %d", want, got)
+		}
+	})
+
+	t.Run("Three numbers", func(t *testing.T) {
+		buffer := strings.NewReader(testEntries)
+		dayOne := DayOnePtTwo{}
+		got, err := dayOne.Challenge(buffer)
+		want := 241861950
+
+		if err != nil {
+			t.Errorf("couldn't read file")
+		}
+
+		if got != want {
+			t.Errorf("want %d got %d", want, got)
+		}
+	})
 }
