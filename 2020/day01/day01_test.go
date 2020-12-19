@@ -1,7 +1,6 @@
 package day01
 
 import (
-	"fmt"
 	"strings"
 	"testing"
 )
@@ -16,11 +15,15 @@ const testEntries = `1721
 func TestChallenge(t *testing.T) {
 	buffer := strings.NewReader(testEntries)
 	// buffer.WriteString(testEntries)
-	entries, err := ExpenseReport(buffer)
+	dayOne := DayOne{}
+	got, err := dayOne.Challenge(buffer)
+	want := 514579
 
 	if err != nil {
 		t.Errorf("couldn't read file")
 	}
 
-	fmt.Println(entries)
+	if got != want {
+		t.Errorf("want %d got %d", want, got)
+	}
 }
