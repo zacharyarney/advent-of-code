@@ -2,33 +2,35 @@ package util
 
 import (
 	"bufio"
-	"fmt"
 	"io"
+	"log"
 	"reflect"
+	"strconv"
 	"testing"
 )
 
 type MockDay struct {
-	Text string
 }
 
-func (m *MockDay) Challenge(file io.Reader) {
+func (m MockDay) Challenge(file io.Reader) (int, error) {
 	scan := bufio.NewScanner(file)
 	scan.Scan()
-	m.Text = scan.Text()
-	fmt.Println(m.Text)
-	fmt.Println(scan.Text())
+	out, err := strconv.Atoi(scan.Text())
+	if err != nil {
+		log.Fatal(err)
+	}
+	return out, err
 }
 
 const testPath = "../inputs/test.txt"
 
 func TestOpenAndUseFile(t *testing.T) {
-	mockDay := &MockDay{}
-	OpenAndUseFile(testPath, mockDay)
-	want := "This is a test."
+	mockDay := MockDay{}
+	got := OpenAndUseFile(testPath, mockDay)
+	want := 2020
 
-	if !reflect.DeepEqual(want, mockDay.Text) {
-		t.Errorf("wanted text: %q got: %q", want, mockDay.Text)
+	if !reflect.DeepEqual(want, got) {
+		t.Errorf("wanted text: %q got: %d", want, got)
 	}
 	// got := OpenAndUseFile("../inputs/test.txt")
 	// want := "/Users/zacharyarney/projects/advent-of-code/2020/inputs/test.txt"
