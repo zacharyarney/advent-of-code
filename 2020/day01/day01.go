@@ -7,8 +7,9 @@ import (
 	"strconv"
 )
 
-// ExpenseReport takes an io.Reader and returns the product of two numbers that have a sum of 2020
-func ExpenseReport(file io.Reader) ([]int, error) {
+// DayOne extends Day
+type DayOne struct{}
+
 	var inputArr []int
 	scan := bufio.NewScanner(file)
 	err := scan.Err()
