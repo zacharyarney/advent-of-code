@@ -10,6 +10,8 @@ import (
 // DayOne extends Day
 type DayOne struct{}
 
+// Challenge takes an io.Reader and returns the product of two numbers that have a sum of 2020
+func (d DayOne) Challenge(file io.Reader) (int, error) {
 	var inputArr []int
 	scan := bufio.NewScanner(file)
 	err := scan.Err()

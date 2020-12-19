@@ -13,7 +13,7 @@ const testEntries = `1721
 675
 1456`
 
-func TestExpenseReport(t *testing.T) {
+func TestChallenge(t *testing.T) {
 	buffer := strings.NewReader(testEntries)
 	// buffer.WriteString(testEntries)
 	entries, err := ExpenseReport(buffer)
