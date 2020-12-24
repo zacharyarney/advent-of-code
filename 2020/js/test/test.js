@@ -1,4 +1,4 @@
-export function it(description, fn) {
+function it(description, fn) {
   try {
     fn();
     console.log(`PASS -- ${description}`);
@@ -8,3 +8,4 @@ export function it(description, fn) {
   }
 }
 
+module.exports = { it };
