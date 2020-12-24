@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 
-	"github.com/zacharyarney/advent-of-code/2020/day01"
-	"github.com/zacharyarney/advent-of-code/2020/util"
+	"github.com/zacharyarney/advent-of-code/2020/go/day01"
+	"github.com/zacharyarney/advent-of-code/2020/go/util"
 )
 
 func main() {
