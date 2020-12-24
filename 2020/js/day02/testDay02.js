@@ -11,3 +11,9 @@ it('dayOnePtOne should return 2', () => {
   const want = 2;
   assert.strictEqual(got, want);
 });
+
+it('dayOnePtTwo should return 1', () => {
+  const got = dayTwoPtTwo(inputOne);
+  const want = 1;
+  assert.strictEqual(got, want);
+});
