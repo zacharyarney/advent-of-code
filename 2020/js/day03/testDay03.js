@@ -14,3 +14,17 @@ itAsync('dayThreePtOne returns 7', async () => {
   const want = 7;
   assert.strictEqual(got, want);
 });
+
+itAsync('dayThreePtTwo returns 336', async () => {
+  const pathArr = [
+    [1, 1],
+    [1, 3],
+    [1, 5],
+    [1, 7],
+    [2, 1],
+  ];
+  const input = await twoDArray(file);
+  const got = dayThreePtTwo(input, pathArr);
+  const want = 336;
+  assert.strictEqual(got, want);
+});
