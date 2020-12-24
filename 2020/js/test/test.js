@@ -8,4 +8,14 @@ function it(description, fn) {
   }
 }
 
-module.exports = { it };
+async function itAsync(description, fn) {
+  try {
+    await fn();
+    console.log(`PASS -- ${description}`);
+  } catch (err) {
+    console.log(`FAIL -- ${description}`);
+    console.log(err);
+  }
+}
+
+module.exports = { it, itAsync };
