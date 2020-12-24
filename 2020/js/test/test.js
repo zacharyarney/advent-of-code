@@ -1,9 +1,10 @@
 export function it(description, fn) {
   try {
     fn();
-    console.log(`${description} -- PASS`);
+    console.log(`PASS -- ${description}`);
   } catch (err) {
-    console.log(`${description} -- FAIL`);
+    console.log(`FAIL -- ${description}`);
     console.log(err);
   }
 }
+
